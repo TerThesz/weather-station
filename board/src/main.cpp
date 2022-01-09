@@ -1,6 +1,6 @@
 #include <Arduino.h>
 #include "sensors.h"
-#include "utils/wifi.h"
+#include "utils/wifi_handler.h"
 #include "utils/tcp_client.h"
 #include "utils/variables.h"
 

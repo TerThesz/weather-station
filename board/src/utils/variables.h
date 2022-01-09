@@ -3,10 +3,10 @@
 
 #include <Arduino.h>
 
-String SSID = "TP-Link_F558";
-String PASSWORD = "46429858";
+char* SSID = "TP-Link_F558";
+char* PASSWORD = "46429858";
 
-String IP = "192.168.0.151";
+IPAddress IP(192,168,0,151);
 int PORT = 4444;
 
 int DELAY = 5000;

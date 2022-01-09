@@ -1,13 +1,15 @@
-#ifndef WIFI_H
-#define WIFI_H
+#ifndef WIFI_HANDLER_H
+#define WIFI_HANDLER_H
 
 #include <Arduino.h>
-#include <ESP8266WiFi.h>
+#include <WiFi.h>
 #include "utils/variables.h"
 
 bool connect_wifi() {
   Serial.println("Connecting to WIFI. . .");
   
+  WiFi.mode(WIFI_STA);
+  WiFi.disconnect();
   WiFi.begin(SSID, PASSWORD);
 
   int i = 0;

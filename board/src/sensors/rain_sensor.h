@@ -5,8 +5,8 @@
 #include "utils/report_parser.h"
 
 // pins
-const int rain_D = 5;
-const int rain_A = A0;
+const int rain_D = 33;
+const int rain_A = 32;
 int rain_intensity;
 int* output = new int[2];
 
@@ -17,6 +17,7 @@ void start_rain_sensor() {
 
 int* update_rain_sensor() {
   rain_intensity = analogRead(rain_A);
+  rain_intensity = 1023 - rain_intensity / 4;
 
   output[0] = rain_intensity;
   output[1] = digitalRead(rain_D) == LOW;

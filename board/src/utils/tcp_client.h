@@ -2,7 +2,7 @@
 #define TCP_CLIENT_H
 
 #include <Arduino.h>
-#include <ESP8266WiFi.h>
+#include <WiFi.h>
 #include "utils/variables.h"
 
 WiFiClient client;
@@ -10,6 +10,7 @@ WiFiClient client;
 bool connect_tcp() {
   Serial.println("Connecting to the server. . .");
 
+  client.stop();
   client.connect(IP, PORT);
 
   int i = 0;
