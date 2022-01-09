@@ -1,3 +1,3 @@
 weather-station
 
-board: new NodeMCU V3
+board: ESP32
