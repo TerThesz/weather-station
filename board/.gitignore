@@ -4,3 +4,4 @@
 .vscode/launch.json
 .vscode/ipch
 src/utils/variable.h
+.variables.h
