@@ -8,31 +8,21 @@
 const int rain_D = 33;
 const int rain_A = 32;
 int rain_intensity;
-int* output = new int[2];
+float* rain_output = new float[2];
 
 void start_rain_sensor() {
   pinMode(rain_D, INPUT);
   pinMode(rain_A, INPUT);
 }
 
-int* update_rain_sensor() {
+float* update_rain_sensor() {
   rain_intensity = analogRead(rain_A);
   rain_intensity = 1023 - rain_intensity / 4;
 
-  output[0] = rain_intensity;
-  output[1] = digitalRead(rain_D) == LOW;
+  rain_output[0] = (float) rain_intensity;
+  rain_output[1] = (float) digitalRead(rain_D) == LOW;
 
-  if (digitalRead(rain_D) == LOW) {
-    Serial.println("Rain detected. Intensity: " + String(rain_intensity));
-    delay(10);
-
-    return output;
-  }
-
-  Serial.println("No rain detected");
-  delay(10);
-
-  return output;
+  return rain_output;
 }
 
 #endif
