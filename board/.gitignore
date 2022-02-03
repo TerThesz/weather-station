@@ -3,5 +3,4 @@
 .vscode/c_cpp_properties.json
 .vscode/launch.json
 .vscode/ipch
-src/utils/variable.h
-.variables.h
+src/utils/.variable.h

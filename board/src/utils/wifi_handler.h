@@ -3,24 +3,27 @@
 
 #include <Arduino.h>
 #include <WiFi.h>
-#include "utils/variables.h"
+#include "../../.variables.h"
 
-bool connect_wifi() {
+bool connect_wifi()
+{
   Serial.println("Connecting to WIFI. . .");
-  
+
   WiFi.mode(WIFI_STA);
   WiFi.disconnect();
   WiFi.begin(SSID, PASSWORD);
 
   int i = 0;
-  while (WiFi.status() != WL_CONNECTED && i < 10) {
+  while (WiFi.status() != WL_CONNECTED && i < 10)
+  {
     Serial.print(". ");
     i++;
 
     delay(500);
   }
 
-  if (WiFi.status() == WL_CONNECTED) {
+  if (WiFi.status() == WL_CONNECTED)
+  {
     Serial.println("\nConnection established\n");
     return true;
   }
@@ -29,7 +32,8 @@ bool connect_wifi() {
   return false;
 }
 
-void get_mac() {
+void get_mac()
+{
   Serial.print("MAC: ");
   Serial.println(WiFi.macAddress());
 }
